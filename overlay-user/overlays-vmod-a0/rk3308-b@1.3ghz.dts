@@ -1,0 +1,29 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			opp-1200000000 {
+				opp-hz = <0x00 0x47868c00>;
+				opp-microvolt = <0x1312d0 0x1312d0 0x147260>;
+				clock-latency-ns = <0x9c40>;
+				status = "okay";
+			};
+
+			opp-1296000000 {
+				opp-hz = <0x00 0x4d3f6400>;
+				opp-microvolt = <0x13d620 0x13d620 0x147260>;
+				clock-latency-ns = <0x9c40>;
+				status = "okay";
+			};
+		};
+	};
+
+	__fixups__ {
+		cpu0_opp_table = "/fragment@0:target:0";
+	};
+};
